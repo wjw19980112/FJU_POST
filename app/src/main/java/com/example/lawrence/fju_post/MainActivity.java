@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
                 case GOTO_MAIN_ACTIVITY:
                     Intent intent = new Intent();
                     //將原本Activity的換成MainActivity
-                    intent.setClass(MainActivity.this, StudentPage.class);
+                    intent.setClass(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                     break;
