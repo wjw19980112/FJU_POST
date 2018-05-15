@@ -12,13 +12,12 @@ public class ExampleDialog extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        Log.e("Login","5");
         builder.setTitle("Information")
                 .setMessage("PASSWORD ERROR")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Log.e("Login","6");
+
                     }
                 });
         return builder.create();
