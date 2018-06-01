@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/sendlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/noticeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/activityName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/editNameText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editNameText"
+            android:layout_width="221dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/noticeName"
+            android:layout_toRightOf="@+id/noticeName"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.803"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noticeName"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/title_message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noticeName" />
+
+        <CheckBox
+            android:id="@+id/Type_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="selectItem"
+            android:text="@string/art" />
+
+        <CheckBox
+            android:id="@+id/Type_scholar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/Type_art"
+            android:layout_toRightOf="@+id/Type_art"
+            android:onClick="selectItem"
+            android:text="@string/scholar" />
+
+        <CheckBox
+            android:id="@+id/Type_pe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/Type_scholar"
+            android:layout_toRightOf="@+id/Type_scholar"
+            android:onClick="selectItem"
+            android:text="@string/pe" />
+
+        <CheckBox
+            android:id="@+id/Type_volunteer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/Type_pe"
+            android:layout_toRightOf="@+id/Type_pe"
+            android:onClick="selectItem"
+            android:text="@string/volunteer" />
+
+        <CheckBox
+            android:id="@+id/Type_career"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_art"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:onClick="selectItem"
+            android:text="@string/career" />
+
+
+        <CheckBox
+            android:id="@+id/Type_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_scholar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/Type_career"
+            android:layout_toRightOf="@+id/Type_career"
+            android:onClick="selectItem"
+            android:text="@string/health" />
+
+        <CheckBox
+            android:id="@+id/Type_entertainment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_pe"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/Type_health"
+            android:layout_toRightOf="@+id/Type_health"
+            android:onClick="selectItem"
+            android:text="@string/entertainment" />
+
+        <CheckBox
+            android:id="@+id/Type_selfgrowth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_career"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:onClick="selectItem"
+            android:text="@string/selfgrowth" />
+
+        <CheckBox
+            android:id="@+id/Type_campus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_health"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/Type_selfgrowth"
+            android:layout_toRightOf="@+id/Type_selfgrowth"
+            android:onClick="selectItem"
+            android:text="@string/campus" />
+
+        <CheckBox
+            android:id="@+id/Type_gmeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_selfgrowth"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:onClick="selectItem"
+            android:text="@string/gmeeting" />
+
+        <CheckBox
+            android:id="@+id/Type_gdevelop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Type_campus"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/Type_gmeeting"
+            android:layout_toRightOf="@+id/Type_gmeeting"
+            android:onClick="selectItem"
+            android:text="@string/gdevelop" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="235dp"
+            android:text="@string/activityTime"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <Spinner
+            android:id="@+id/yearnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="260dp"
+            android:entries="@array/yearnumber"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="262dp"
+            android:layout_toEndOf="@+id/yearnumber"
+            android:layout_toRightOf="@+id/yearnumber"
+            android:text="@string/year"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="年" />
+
+        <Spinner
+            android:id="@+id/monthnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="260dp"
+            android:layout_toEndOf="@+id/year"
+            android:layout_toRightOf="@+id/year"
+            android:entries="@array/monthnum"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="262dp"
+            android:layout_toEndOf="@+id/monthnum"
+            android:layout_toRightOf="@+id/monthnum"
+            android:text="@string/year"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="月" />
+
+        <Spinner
+            android:id="@+id/datenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="260dp"
+            android:layout_toEndOf="@+id/month"
+            android:layout_toRightOf="@+id/month"
+            android:entries="@array/datenum"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="262dp"
+            android:layout_toEndOf="@+id/datenum"
+            android:layout_toRightOf="@+id/datenum"
+            android:text="@string/date"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="日" />
+
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="203dp"
+            android:layout_marginStart="26dp"
+            android:text="@string/content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="333dp"
+            android:layout_height="88dp"
+
+            android:layout_below="@+id/content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-203dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/contentbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="79dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_toStartOf="@+id/monthnum"
+            android:text="@string/send" />
+
+        <Button
+            android:id="@+id/bin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/send"
+            android:layout_centerHorizontal="true"
+            android:text="@string/bin" />
+
+
+    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+
+
+

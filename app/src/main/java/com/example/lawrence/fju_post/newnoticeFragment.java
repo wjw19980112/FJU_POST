@@ -1,43 +1,41 @@
 package com.example.lawrence.fju_post;
 
-import android.content.Intent;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class newnoticeFragment extends Fragment {
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mHandler.sendEmptyMessageDelayed(GOTO_MAIN_ACTIVITY, 2000);
-    }
-    private static final int GOTO_MAIN_ACTIVITY = 0;
-    private Handler mHandler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.fragment_newnotice, container, false);
 
-            switch (msg.what) {
-                case GOTO_MAIN_ACTIVITY:
-                    Intent intent = new Intent();
-                    //將原本Activity的換成MainActivity
-                    intent.setClass(MainActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
-                    break;
 
-                default:
-                    break;
+        Button button1 = (Button) view.findViewById(R.id.send);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new NoticeFragment();
+                FragmentTransaction transaction =getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, fragment);
+                transaction.commit();
             }
-        }
+        });
 
-    };
+
+        return view;
+    }
+
     public void selectItem(View view){
         ArrayList<String> selection1 =new ArrayList<String>();
         boolean checked=((CheckBox) view).isChecked();
@@ -134,24 +132,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    private Spinner yearnum,monthnum,datenum;
-    public void SelectDate(){
-
-        yearnum = (Spinner)findViewById(R.id.yearnumber);
-        ArrayAdapter<CharSequence> yearnumber = ArrayAdapter.createFromResource(MainActivity.this,
-                R.array.yearnumber,
-                android.R.layout.simple_spinner_dropdown_item);
-
-        monthnum = (Spinner)findViewById(R.id.yearnumber);
-        ArrayAdapter<CharSequence> monthnum = ArrayAdapter.createFromResource(MainActivity.this,
-                R.array.monthnum,
-                android.R.layout.simple_spinner_dropdown_item);
-
-        datenum = (Spinner)findViewById(R.id.yearnumber);
-        ArrayAdapter<CharSequence> datenum = ArrayAdapter.createFromResource(MainActivity.this,
-                R.array.datenum,
-                android.R.layout.simple_spinner_dropdown_item);
-
-    }
-
 }

@@ -21,8 +21,10 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".NoticeActivity" />
-        <activity android:name=".StudentActivity"></activity>
+        <activity android:name=".StudentActivity" />
+        <activity
+            android:name=".posterActivity"
+            android:label="@string/title_activity_poster"></activity>
     </application>
 
 </manifest>
