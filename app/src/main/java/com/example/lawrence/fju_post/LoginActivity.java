@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         mName = (EditText) findViewById(R.id.etName);
         mPassword = (EditText) findViewById(R.id.etPassword);
         final Button etbutton = (Button) findViewById(R.id.button);
-        final TextView etText = (TextView) findViewById(R.id.etText);
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             String email = mName.getText().toString();
@@ -42,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!= null){
 
-                    startActivity(new Intent(LoginActivity.this, posterActivity.class));
+                    startActivity(new Intent(LoginActivity.this, beginActivity.class));
 
                 }
             }
