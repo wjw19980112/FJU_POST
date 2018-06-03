@@ -80,9 +80,9 @@
     <string name="record1">活動紀錄</string>
     <string name="weather1">天氣</string>
     <string name="todo2">TODO</string>
-    <string name="question">Which version do you want to login?</string>
-    <string name="student_version">Student Version</string>
-    <string name="promulgator_version">promulgator Version</string>
+    <string name="question">請選擇你想進入的版本：</string>
+    <string name="student_version">學生端</string>
+    <string name="promulgator_version">發佈端</string>
     <string-array name="datenum">
         <item>1</item>
         <item>2</item>

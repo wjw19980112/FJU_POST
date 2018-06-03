@@ -95,22 +95,24 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="35dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/textPicture"
             android:layout_marginLeft="127dp"
             android:layout_marginStart="127dp"
+            android:background="@drawable/c101b68f4b7e4c1dc5af3816f848bf80_d7190ffd9ceb259f21c6e93b0c0cb11827d7"
             android:text="上傳頭像" />
 
         <Button
             android:id="@+id/buttonSignOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="169dp"
+            android:layout_height="52dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="70dp"
+            android:background="@drawable/c101b68f4b7e4c1dc5af3816f848bf80_d7190ffd9ceb259f21c6e93b0c0cb11827d7"
             android:text="登出 / 切換帳號" />
 
         <TextView

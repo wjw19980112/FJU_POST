@@ -21,11 +21,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="96dp"
+        android:layout_height="52dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="82dp"
+        android:background="@drawable/c101b68f4b7e4c1dc5af3816f848bf80_d7190ffd9ceb259f21c6e93b0c0cb11827d7"
         android:text="@string/login"
         tools:layout_editor_absoluteX="137dp"
         tools:layout_editor_absoluteY="326dp" />

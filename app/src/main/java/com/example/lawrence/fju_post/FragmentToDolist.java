@@ -20,7 +20,7 @@ public class FragmentToDolist extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.activity_add_todolist,container,false);
+        view = inflater.inflate(R.layout.fragment_tab_todolist,container,false);
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.addtodolistbutton);
         fab.setOnClickListener(new View.OnClickListener() {
