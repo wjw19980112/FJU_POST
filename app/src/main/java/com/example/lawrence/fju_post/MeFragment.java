@@ -16,64 +16,48 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MeFragment extends Fragment {
-    private static final String TAG= "MeFragment";
-
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
-    private Button logout;
-
     @Nullable
     @Override
+
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View  view =  inflater.inflate(R.layout.fragment_me, container, false);
-
-
-        logout=(Button) view.findViewById(R.id.button3);
-
-        setupFirebaseListener();
-
-        logout.setOnClickListener(new View.OnClickListener(){
+        View view = inflater.inflate(R.layout.fragment_me, container, false);
+        Button nextPageBtn = (Button) view.findViewById(R.id.button3);
+        Button nextPageBtn1 = (Button) view.findViewById(R.id.weather);
+        Button nextPageBtn2 = (Button) view.findViewById(R.id.horoscope);
+        Button nextPageBtn3 = (Button) view.findViewById(R.id.news);
+        nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Log.d(TAG,"onClick: attempting to sign out the user.");
-                FirebaseAuth.getInstance().signOut();
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),FragmentSetting.class));
+
             }
         });
+        nextPageBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),WeatherActivity.class));
 
+            }
+        });
+        nextPageBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),HoroscopeActivity.class));
+
+            }
+        });
+        nextPageBtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),NewsActivity.class));
+
+            }
+        });
         return view;
     }
-
-    private void setupFirebaseListener(){
-        Log.d(TAG,"setupFirebaseListener: setting up the auth state listener.");
-        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null){
-                    Log.d(TAG,"onAuthStateChanged: signed_in:" + user.getUid());
-                }else{
-                    Log.d(TAG,"onAuthStateChanged: signed_out:" );
-                    Toast.makeText(getActivity(),"Signed_out",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(),LoginActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                }
-            }
-        };
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        FirebaseAuth.getInstance().addAuthStateListener(mAuthStateListener);
-    }
-
-    @Override
-    public void onStop(){
-        super.onStop();
-        if(mAuthStateListener != null) {
-            FirebaseAuth.getInstance().removeAuthStateListener(mAuthStateListener);
-        }
-    }
-
-
 }
+
+
+
+

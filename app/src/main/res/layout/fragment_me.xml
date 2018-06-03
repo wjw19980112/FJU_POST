@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="@string/i1"
+            android:text="@string/me9"
             android:textColor="#080808"
             android:textSize="20sp" />
 
@@ -63,7 +63,7 @@
             android:layout_marginStart="13dp"
             android:scaleType="centerInside"
             app:srcCompat="@mipmap/my"
-            android:contentDescription="@string/todo2" />
+            android:contentDescription="@string/todo9" />
 
         <TextView
             android:id="@+id/userName"
@@ -76,7 +76,7 @@
             android:layout_marginStart="130dp"
             android:layout_marginTop="12dp"
             android:gravity="center_vertical"
-            android:text="@string/name1"
+            android:text="@string/name9"
             android:textColor="#686463"
             android:textSize="20sp" />
 
@@ -89,7 +89,7 @@
             android:layout_alignStart="@+id/userName"
             android:layout_marginBottom="16dp"
             android:gravity="center_vertical"
-            android:text="@string/email1"
+            android:text="@string/mail9"
             android:textColor="#686463" />
 
 
@@ -104,7 +104,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="206dp"
         android:background="#FFFFFF"
-        android:text="@string/record1"
+        android:text="@string/record9"
         android:textSize="20sp" />
 
     <Button
@@ -113,7 +113,25 @@
         android:layout_height="60dp"
         android:layout_below="@+id/activityRecord"
         android:background="@mipmap/weatherbackground"
-        android:text="@string/weather1"
+        android:text="@string/weather9"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/horoscope"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/weather"
+        android:background="@drawable/horoscope_image"
+        android:text="@string/yunshi9"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/news"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/horoscope"
+        android:background="@drawable/news_image"
+        android:text="@string/news9"
+        android:textColor="#000000"
         android:textSize="20sp" />
 
 </RelativeLayout>
