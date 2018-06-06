@@ -30,7 +30,7 @@ public class newnoticeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newnotice, container, false);
-        mOrder = (Button) view.findViewById(R.id.btnorder);//
+        mOrder = (Button) view.findViewById(R.id.button6);//
         //mItemSelected = (TextView) view.findViewById(R.id.tvItemSelected);
         listItems = getResources().getStringArray(R.array.shopping_item);
         checkedItems = new boolean[listItems.length];
