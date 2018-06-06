@@ -32,14 +32,12 @@
             android:id="@+id/noticeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="35dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/Type"
+            android:layout_marginTop="64dp"
             android:text="@string/activityName"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editNameText"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,11 +47,8 @@
             android:id="@+id/editNameText"
             android:layout_width="221dp"
             android:layout_height="34dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/noticeName"
-            android:layout_toRightOf="@+id/noticeName"
+            android:layout_alignStart="@+id/monthnum"
+            android:layout_alignTop="@+id/noticeName"
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,160 +60,25 @@
             android:id="@+id/Type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/noticeName"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_alignBaseline="@+id/button6"
+            android:layout_alignStart="@+id/yearnumber"
             android:text="@string/title_message"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/noticeName" />
 
-        <CheckBox
-            android:id="@+id/Type_art"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="selectItem"
-            android:text="@string/art" />
-
-        <CheckBox
-            android:id="@+id/Type_scholar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toEndOf="@+id/Type_art"
-            android:layout_toRightOf="@+id/Type_art"
-            android:onClick="selectItem"
-            android:text="@string/scholar" />
-
-        <CheckBox
-            android:id="@+id/Type_pe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toEndOf="@+id/Type_scholar"
-            android:layout_toRightOf="@+id/Type_scholar"
-            android:onClick="selectItem"
-            android:text="@string/pe" />
-
-        <CheckBox
-            android:id="@+id/Type_volunteer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toEndOf="@+id/Type_pe"
-            android:layout_toRightOf="@+id/Type_pe"
-            android:onClick="selectItem"
-            android:text="@string/volunteer" />
-
-        <CheckBox
-            android:id="@+id/Type_career"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_art"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:onClick="selectItem"
-            android:text="@string/career" />
-
-
-        <CheckBox
-            android:id="@+id/Type_health"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_scholar"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_toEndOf="@+id/Type_career"
-            android:layout_toRightOf="@+id/Type_career"
-            android:onClick="selectItem"
-            android:text="@string/health" />
-
-        <CheckBox
-            android:id="@+id/Type_entertainment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_pe"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_toEndOf="@+id/Type_health"
-            android:layout_toRightOf="@+id/Type_health"
-            android:onClick="selectItem"
-            android:text="@string/entertainment" />
-
-        <CheckBox
-            android:id="@+id/Type_selfgrowth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_career"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:onClick="selectItem"
-            android:text="@string/selfgrowth" />
-
-        <CheckBox
-            android:id="@+id/Type_campus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_health"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_toEndOf="@+id/Type_selfgrowth"
-            android:layout_toRightOf="@+id/Type_selfgrowth"
-            android:onClick="selectItem"
-            android:text="@string/campus" />
-
-        <CheckBox
-            android:id="@+id/Type_gmeeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_selfgrowth"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:onClick="selectItem"
-            android:text="@string/gmeeting" />
-
-        <CheckBox
-            android:id="@+id/Type_gdevelop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Type_campus"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_toEndOf="@+id/Type_gmeeting"
-            android:layout_toRightOf="@+id/Type_gmeeting"
-            android:onClick="selectItem"
-            android:text="@string/gdevelop" />
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="235dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/noticeName"
+            android:layout_marginTop="213dp"
             android:text="@string/activityTime"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
 
@@ -322,23 +182,37 @@
 
         <Button
             android:id="@+id/send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="85dp"
+            android:layout_height="54dp"
 
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="79dp"
-            android:layout_marginEnd="-16dp"
-            android:layout_toStartOf="@+id/monthnum"
-            android:text="@string/send" />
+            android:layout_marginBottom="86dp"
+            android:layout_toEndOf="@+id/content"
+            android:background="@drawable/c101b68f4b7e4c1dc5af3816f848bf80_d7190ffd9ceb259f21c6e93b0c0cb11827d7"
+            android:text="@string/send"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/bin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="95dp"
+            android:layout_height="55dp"
 
-            android:layout_alignTop="@+id/send"
-            android:layout_centerHorizontal="true"
-            android:text="@string/bin" />
+            android:layout_alignBottom="@+id/send"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="95dp"
+            android:background="@drawable/c101b68f4b7e4c1dc5af3816f848bf80_d7190ffd9ceb259f21c6e93b0c0cb11827d7"
+            android:text="@string/bin"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="126dp"
+            android:layout_height="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/editNameText"
+            android:layout_marginTop="131dp"
+            android:background="@drawable/c101b68f4b7e4c1dc5af3816f848bf80_d7190ffd9ceb259f21c6e93b0c0cb11827d7"
+            android:text="@string/setactivity" />
 
 
     </RelativeLayout>

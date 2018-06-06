@@ -36,8 +36,6 @@ public class schoolactivity extends Fragment {
         //mItemSelected = (TextView) view.findViewById(R.id.tvItemSelected);
         listItems = getResources().getStringArray(R.array.shopping_item);
         checkedItems = new boolean[listItems.length];
-        lv = (ListView) view.findViewById(R.id.tab_listview);    //实例化
-
 
         mOrder.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -152,4 +152,12 @@
     <string name="yunshi9">星座運勢</string>
     <string name="news9">新聞</string>
     <string name="todo9">TODO</string>
+    <string name="due_date">Due Date</string>
+    <string name="DDL">事件到期時間</string>
+    <string name="select_date">select date</string>
+    <string name="select_time">select time</string>
+    <string name="due_time">Due Time</string>
+    <string name="due_day">事件到期日期</string>
+    <string name="add">確認添加</string>
+    <string name="will_do">代辦事項名稱</string>
 </resources>

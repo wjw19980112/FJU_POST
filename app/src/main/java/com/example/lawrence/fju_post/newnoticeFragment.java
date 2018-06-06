@@ -1,5 +1,7 @@
 package com.example.lawrence.fju_post;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,126 +12,95 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class newnoticeFragment extends Fragment {
 
+    Button mOrder;
+    TextView mItemSelected;
+    String[] listItems;
+    boolean[] checkedItems;
+    ArrayList<Integer> mUserItems = new ArrayList<>();
+
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_newnotice, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_newnotice, container, false);
+        mOrder = (Button) view.findViewById(R.id.btnorder);//
+        //mItemSelected = (TextView) view.findViewById(R.id.tvItemSelected);
+        listItems = getResources().getStringArray(R.array.shopping_item);
+        checkedItems = new boolean[listItems.length];
 
 
-        Button button1 = (Button) view.findViewById(R.id.send);
-        button1.setOnClickListener(new View.OnClickListener() {
+        mOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new NoticeFragment();
-                FragmentTransaction transaction =getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, fragment);
-                transaction.commit();
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(newnoticeFragment.super.getContext());
+                mBuilder.setTitle(R.string.dialog_title);
+                mBuilder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                    //類別點選
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
+                        if (isChecked) {
+                            if (!mUserItems.contains(position)) {
+                                mUserItems.add(position);
+                            } else if(!mUserItems.contains(position)){
+                                mUserItems.remove(position);
+                            }
+                        }
+                    }
+                });
+                //確認
+                mBuilder.setCancelable(false);
+                mBuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        String item = "";
+                        for (int i = 0; i < mUserItems.size(); i++) {
+                            item = item + listItems[mUserItems.get(i)];
+                            if (i != mUserItems.size() - 1) ;
+                            {
+                                item = item + ",";
+
+                            }
+                        }
+                        mItemSelected.setText(item);
+                    }
+
+
+                });
+
+                //離開
+                mBuilder.setNegativeButton(R.string.dismiss, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                //清除
+                mBuilder.setNeutralButton(R.string.clear, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        for (int i = 0; i < checkedItems.length; i++) {
+                            checkedItems[i] = false;
+                            mUserItems.clear();
+                            //mItemSelected.setText("");
+                        }
+                    }
+                });
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
             }
         });
-
-
         return view;
-    }
-
-    public void selectItem(View view){
-        ArrayList<String> selection1 =new ArrayList<String>();
-        boolean checked=((CheckBox) view).isChecked();
-        switch (view.getId()){
-            case R.id.Type_art:
-                if(checked){
-                    selection1.add("art");
-                }
-                else{
-                    selection1.remove("art");
-                }
-                break;
-            case R.id.Type_scholar:
-                if(checked){
-                    selection1.add("scholar");
-                }
-                else{
-                    selection1.remove("scholar");
-                }
-                break;
-            case R.id.Type_pe:
-                if(checked){
-                    selection1.add("pe");
-                }
-                else{
-                    selection1.remove("pe");
-                }
-                break;
-            case R.id.Type_volunteer:
-                if(checked){
-                    selection1.add("volunteer");
-                }
-                else{
-                    selection1.remove("volunteer");
-                }
-                break;
-            case R.id.Type_career:
-                if(checked){
-                    selection1.add("career");
-                }
-                else{
-                    selection1.remove("career");
-                }
-                break;
-            case R.id.Type_health:
-                if(checked){
-                    selection1.add("health");
-                }
-                else{
-                    selection1.remove("health");
-                }
-                break;
-            case R.id.Type_entertainment:
-                if(checked){
-                    selection1.add("entertainment");
-                }
-                else{
-                    selection1.remove("entertainment");
-                }
-                break;
-            case R.id.Type_selfgrowth:
-                if(checked){
-                    selection1.add("selfgrowth");
-                }
-                else{
-                    selection1.remove("selfgrowth");
-                }
-                break;
-            case R.id.Type_campus:
-                if(checked){
-                    selection1.add("campus");
-                }
-                else{
-                    selection1.remove("campus");
-                }
-                break;
-            case R.id.Type_gmeeting:
-                if(checked){
-                    selection1.add("gmeeting");
-                }
-                else{
-                    selection1.remove("gmeeting");
-                }
-                break;
-            case R.id.Type_gdevelop:
-                if(checked){
-                    selection1.add("gdevelop");
-                }
-                else{
-                    selection1.remove("gdevelop");
-                }
-                break;
-
-        }
 
     }
+
+
+
+
 }
