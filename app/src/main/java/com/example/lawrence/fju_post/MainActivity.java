@@ -4,6 +4,12 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 case GOTO_MAIN_ACTIVITY:
                     Intent intent = new Intent();
                     //將原本Activity的換成MainActivity
-                    intent.setClass(MainActivity.this, StudentPage.class);
+                    intent.setClass(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                     break;
@@ -32,4 +38,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+
+    private Spinner yearnum,monthnum,datenum;
+    public void SelectDate(){
+
+        yearnum = (Spinner)findViewById(R.id.yearnumber);
+        ArrayAdapter<CharSequence> yearnumber = ArrayAdapter.createFromResource(MainActivity.this,
+                R.array.yearnumber,
+                android.R.layout.simple_spinner_dropdown_item);
+
+        monthnum = (Spinner)findViewById(R.id.yearnumber);
+        ArrayAdapter<CharSequence> monthnum = ArrayAdapter.createFromResource(MainActivity.this,
+                R.array.monthnum,
+                android.R.layout.simple_spinner_dropdown_item);
+
+        datenum = (Spinner)findViewById(R.id.yearnumber);
+        ArrayAdapter<CharSequence> datenum = ArrayAdapter.createFromResource(MainActivity.this,
+                R.array.datenum,
+                android.R.layout.simple_spinner_dropdown_item);
+
+    }
+
 }
